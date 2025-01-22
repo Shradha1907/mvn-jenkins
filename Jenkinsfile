@@ -1,23 +1,35 @@
 pipeline {
+    tools{
+        jdk 'JAVA_HOME'
+        maven 'M2_HOME'
+    }
     agent any
 
     stages {
         stage('git clone') {
             steps {
-                git credentialsId: 'jenkins_slave', url: 'https://github.com/Shradha1907/mvn-jenkins.git'
+                git 'https://github.com/Shradha1907/mvn-jenkins.git'
                 echo 'git cloned sucessefully'
             }
         }
         stage('compile') {
             steps {
-                echo 'sucessefully compiled'
+                sh 'mvn compile'
+                echo 'sucessefully build the code'
+            }
+        }
+        stage('unit test') {
+            steps {
+                sh 'mvn test'
+                echo 'sucessefully unit testing done'
             }
         }
         stage('package') {
             steps {
+                sh 'mvn package'
                 echo 'sucessefully packaged'
             }
         }
         
     }
-}
+	}
