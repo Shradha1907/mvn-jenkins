@@ -1,9 +1,9 @@
 pipeline {
     tools{
-        jdk 'JAVA_HOME1'
-        maven 'M2_HOME1'
+        jdk 'JAVA_HOME'
+        maven 'M2_HOME'
     }
-    agent { label 'windowsslave' }
+    agent { label 'linuxslave' }
 
     stages {
         stage('git clone') {
