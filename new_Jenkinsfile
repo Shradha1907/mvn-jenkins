@@ -1,11 +1,12 @@
 pipeline {
 
     stages {
-        stage('git clone') {
-           tools{
+	      tools{
               jdk 'JAVA_HOME'
               maven 'M2_HOME'
-               }
+			  }
+        stage('git clone') {
+           
            agent{label 'linuxslave'}
            steps{
                git 'https://github.com/Shradha1907/mvn-jenkins.git'
@@ -14,17 +15,18 @@ pipeline {
 
            }
 
-   stage('git clone') {
-           tools{
+         tools{
               jdk 'JAVA_HOME1'
               maven 'M2_HOME1'
                }
+   stage('git clone') {
+           
            agent{
               label 'windowsslave'
            }
            steps{
                git 'https://github.com/Shradha1907/mvn-jenkins.git'
-                sh 'mvn package'
+                sh 'mvn compile'
            }
 
            }     
