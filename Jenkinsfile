@@ -1,10 +1,5 @@
 pipeline {
     tools{
-        jdk 'JAVA_HOME'
-        maven 'M2_HOME'
-    }
-    agent { label 'linuxslave' }
-
     stages {
         stage('git clone') {
             steps {
