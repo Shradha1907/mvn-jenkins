@@ -1,0 +1,33 @@
+pipeline {
+    stages {
+        stage('git clone') {
+           tools{
+              jdk 'JAVA_HOME'
+              maven 'M2_HOME'
+               }
+           agent{
+              label 'linuxslave'
+           }
+           steps{
+               git ''
+                sh 'mvn compile'
+           }
+
+           }
+   stage('git clone') {
+           tools{
+              jdk 'JAVA_HOME1'
+              maven 'M2_HOME1'
+               }
+           agent{
+              label 'windowsslave'
+           }
+           steps{
+               git ''
+                sh 'mvn package'
+           }
+
+           }     
+           
+    }
+	}
