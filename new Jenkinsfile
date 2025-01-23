@@ -9,7 +9,7 @@ pipeline {
               label 'linuxslave'
            }
            steps{
-               git ''
+               git 'https://github.com/Shradha1907/mvn-jenkins.git'
                 sh 'mvn compile'
            }
 
@@ -23,7 +23,7 @@ pipeline {
               label 'windowsslave'
            }
            steps{
-               git ''
+               git 'https://github.com/Shradha1907/mvn-jenkins.git'
                 sh 'mvn package'
            }
 
