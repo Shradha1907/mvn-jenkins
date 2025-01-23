@@ -1,7 +1,6 @@
 pipeline {
-
-    stages {
-          agent { label 'linuxslave' }
+  stages {
+          "agent { label 'linuxslave' }"
 	      tools {
               jdk 'JAVA_HOME'
               maven 'M2_HOME'
