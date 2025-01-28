@@ -1,23 +1,18 @@
-
 pipeline {
-
-       agent 'none'
+agent 'none'
     stages {
-	
-     	 stage('compile') {
+	stage('compile') {
 		      tools{
                    jdk 'JAVA_HOME1'
                    maven 'M2_HOME1'
                 }
 			  agent { label 'windowsslave' }
-
-              steps {
+            steps {
                  git 'https://github.com/Shradha1907/mvn-jenkins.git'
                  bat 'mvn compile'
                 }
 			}   
-        
-		stage('compile') {
+	 stage('compile') {
 		      tools{
                    jdk 'JAVA_HOME'
                    maven 'M2_HOME'
