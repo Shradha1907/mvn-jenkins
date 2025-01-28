@@ -12,7 +12,7 @@ agent 'none'
                  bat 'mvn compile'
                 }
 			}   
-	 stage('compile') {
+	 stage('test') {
 		      tools{
                    jdk 'JAVA_HOME'
                    maven 'M2_HOME'
@@ -21,7 +21,7 @@ agent 'none'
 
               steps {
                  git 'https://github.com/Shradha1907/mvn-jenkins.git'
-                 sh 'mvn compile'
+                 sh 'mvn test'
                 }
 			} 
 		
