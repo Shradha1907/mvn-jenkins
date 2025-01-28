@@ -11,7 +11,8 @@ agent 'none'
                  git 'https://github.com/Shradha1907/mvn-jenkins.git'
                  bat 'mvn compile'
                 }
-			}   
+			} 
+
 	 stage('test') {
 		      tools{
                    jdk 'JAVA_HOME'
